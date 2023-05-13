@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h1>Adjustment Statistics</h1>
+<div style="width:400px;height:400px;">
+    <canvas id="polar-area-chart"></canvas>
+</div>
+<script>
+    var adjustmentStats = @Html.Raw(Json.Serialize(ViewBag.AdjustmentStats));
+
+    var ctx = document.getElementById('polar-area-chart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: Object.keys(adjustmentStats),
+            datasets: [{
+                label: 'Adjustment Stats',
+                data: Object.values(adjustmentStats),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                ]
+            }]
+        }
+    });
+</script>

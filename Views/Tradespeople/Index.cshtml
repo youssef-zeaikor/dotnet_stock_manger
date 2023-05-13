@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Inventory_M.Models.tradespeople.Tradespeople>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>TRADESPEOPLE</h2>
+
+<table style="width:100%;">
+    <tr>
+        <td style="width:80%;"></td>
+        <td style="text-align:center;">
+            <a class="btn btn-success" data-toggle="modal" asp-action="Create">
+                Create Now
+            </a>
+        </td>
+    </tr>
+</table>
+<br />
+
+<table class="table table-bordered table-hover" id="simple-table">
+    <thead style="background-color: #212F3D; color: #fff;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tele)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ADRESS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.matricule)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tele)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ADRESS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matricule)
+                </td>
+                <td style="text-align:center;">
+                    <a asp-action="Edit" asp-route-id="@item.TradesId">
+                        <span>
+                            <i class="ace-icon fa fa-pencil bigger-120 btn btn-xs btn-info edit"></i>
+                        </span>
+                    </a>|
+
+                    <a asp-action="Delete" asp-route-id="@item.TradesId">
+                        <span>
+                            <i class="ace-icon fa fa-trash-o bigger-120   btn btn-xs btn-danger delete"></i>
+                        </span>
+                    </a> |
+
+                    <a asp-action="Details" asp-route-id="@item.TradesId">
+                        <span>
+                            <i class="fa fa-info-circle  bigger-120 " aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    th {
+        text-align: center;
+    }
+</style>
+

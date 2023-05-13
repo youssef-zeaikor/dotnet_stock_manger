@@ -1,0 +1,36 @@
+﻿@model Inventory_M.Models.tradespeople.Tradespeople
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<table class="table">
+    <tr>
+        <td><strong>@Html.DisplayNameFor(model => model.FullName)</strong></td>
+        <td>@Html.DisplayFor(model => model.FullName)</td>
+    </tr>
+    <tr>
+        <td><strong>@Html.DisplayNameFor(model => model.Email)</strong></td>
+        <td>@Html.DisplayFor(model => model.Email)</td>
+    </tr>
+    <tr>
+        <td><strong>@Html.DisplayNameFor(model => model.Tele)</strong></td>
+        <td>@Html.DisplayFor(model => model.Tele)</td>
+    </tr>
+    <tr>
+        <td><strong>@Html.DisplayNameFor(model => model.ADRESS)</strong></td>
+        <td>@Html.DisplayFor(model => model.ADRESS)</td>
+    </tr>
+    <tr>
+        <td><strong>@Html.DisplayNameFor(model => model.matricule)</strong></td>
+        <td>@Html.DisplayFor(model => model.matricule)</td>
+    </tr>
+</table>
+
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.TradesId" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff;">Edit</a> |
+        <a asp-action="Index" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff;">Back to List</a>
+    </div>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Inventory_M.Models.product.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>INVENTORY LIST</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                PCODE
+            </th>
+            <th>
+                PRODUCT NAME
+            </th>
+
+            <th>
+                DESCRIPTION
+            </th>
+            <th>
+                BRAND
+            </th>
+            <th>
+                CATEGORY
+            </th>
+            <th>
+                PRICE
+            </th>
+            <th>
+                RE-ORDER
+            </th>
+            <th> STOCK ON HAND</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Barcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brands.Brand_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categories.Category_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recorder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

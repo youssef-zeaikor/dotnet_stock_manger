@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Inventory_M.Models.stockin.StockIn>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<ul class="nav nav-tabs">
+
+
+    <li class="nav-item">
+        <a asp-area="" asp-controller="StockIn" asp-action="Create">STOCK ENTRY</a>
+
+    </li>
+    <li class="nav-item">
+        <a asp-area="" asp-controller="StockIn" asp-action="Index">STOCK IN HISTORY</a>
+
+    </li>
+
+
+</ul>
+<h2>STOCK IN HISTORY</h2>
+
+
+
+
+<table class="table  table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.products)
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stockeby)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.venders.VendorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venders.ContactPerson)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venders.Address)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.products.Product_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtynew)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stockeby)
+            </td>
+          @*  <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>*@
+            <td>
+                    @Html.DisplayFor(modelItem => item.venders.VendorName)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.venders.ContactPerson)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.venders.Address)
+                </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StockInId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StockInId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StockInId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

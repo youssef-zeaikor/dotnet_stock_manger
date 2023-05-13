@@ -1,0 +1,389 @@
+@model Inventory_M.Models.ViewModels.EmployeeViewModel
+@using Inventory_M.Models.ViewModels
+@{
+    var employees = ViewBag.Employees as List<EmployeeViewModel>;
+    Layout = "~/Views/Shared/_dashboardLayout.cshtml";
+}
+
+
+
+                    <!--=======================================================================-->
+					
+
+					@if (ViewData["ValidateMessage"] != null)
+					{
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							@ViewData["ValidateMessage"]
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					}
+
+
+					
+							<div class="page-content">
+					
+                        
+								<div class="row">
+									<div class="col-xs-12">
+										<table id="simple-table" class="table  table-bordered table-hover">
+											<thead>
+
+												<tr>
+													<th class="center">
+														<label class="pos-rel">
+															<input type="checkbox" class="ace">
+															<span class="lbl"></span>
+														</label>
+													</th>
+													<th class="detail-col">Details</th>
+													<th>User Name</th>
+													<th>User Last Name</th>
+													<th class="hidden-480">Role</th>
+
+													<th>
+														<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+														account Added At
+													</th>
+													<th class="hidden-480">Activity</th>
+
+													<th></th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+                                                @foreach (var user in employees)
+                                                {
+												
+
+												<tr>
+													<td class="center">
+														<label class="pos-rel">
+															<input type="checkbox" class="ace">
+															<span class="lbl"></span>
+														</label>
+													</td>
+
+													<td class="center">
+														<div class="action-buttons">
+															<a  class="green bigger-140 show-details-btn" title="Show Details">
+																<i class="ace-icon fa fa-angle-double-down"></i>
+																<span class="sr-only ">Details</span>
+															</a>
+														</div>
+													</td>
+
+													<td>@user.Name</td>
+
+													<td>@user.Lname</td>
+
+													<td>@user.RoleName</td>
+
+													<td>Feb 12</td>
+
+													<td class="hidden-480">
+													@if (user.Status)
+													{
+														<span class="label label-sm label-success">Connected</span>
+													}
+													else
+													{
+														<span class="label label-sm label-warning">Not Connected</span>
+													}
+													</td>
+
+
+													<td>
+														<div class="hidden-sm hidden-xs btn-group">
+															
+															<button class="btn btn-xs btn-info edit" value="@user.UserId"  type="button"  data-toggle="modal" data-target="#exampleModal">
+																<i class="ace-icon fa fa-pencil bigger-120"></i>
+															</button>
+
+															<button class="btn btn-xs btn-danger delete" value="@user.UserId" type="button"  data-toggle="modal" data-target="#DeleteModal">
+																<i class="ace-icon fa fa-trash-o bigger-120"></i>
+															</button>
+
+															
+														</div>
+
+														<div class="hidden-md hidden-lg">
+															<div class="inline pos-rel">
+																<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																	<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+																</button>
+
+																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																	<li>
+																		<a href="#" class="tooltip-info" data-rel="tooltip" title="" data-original-title="View">
+																			<span class="blue">
+																				<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																	<li>
+																		<a href="#" class="tooltip-success" data-rel="tooltip" title="" data-original-title="Edit">
+																			<span class="green">
+																				<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																	<li>
+																		<a href="#" class="tooltip-error" data-rel="tooltip" title="" data-original-title="Delete">
+																			<span class="red">
+																				<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</td>
+												</tr>
+
+												<tr class="detail-row">
+													<td colspan="8">
+														<div class="table-detail">
+															<div class="row">
+																<div class="col-xs-12 col-sm-2">
+																	<div class="text-center">
+																		<br>
+																		<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+																			<div class="inline position-relative">
+																				<a class="user-title-label" href="#">
+																					<i class="ace-icon fa fa-circle light-green"></i>
+																					&nbsp;
+																					<span class="white">@user.Name :: @user.Lname</span>
+																					
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-7">
+																	<div class="space visible-xs"></div>
+
+																	<div class="profile-user-info profile-user-info-striped">
+					
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> Email </div>
+
+																			<div class="profile-info-value">
+																				<span>@user.Email</span>
+																			</div>
+																		</div>
+
+																		<div class="profile-info-row">
+																			<div class="profile-info-name"> PassWord </div>
+
+																			<div class="profile-info-value">
+																				<span>@user.PassWord</span>
+																			</div>
+																		</div>
+
+																	</div>
+																</div>
+
+																<div class="col-xs-12 col-sm-3">
+																	<div class="space visible-xs"></div>
+																	<h4 class="header blue lighter less-margin">Send a message to @user.Name</h4>
+
+																	<div class="space-6"></div>
+
+																	<form>
+																		<fieldset>
+																			<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
+																		</fieldset>
+
+																		<div class="hr hr-dotted"></div>
+
+																		<div class="clearfix">
+																			<label class="pull-left">
+																				<input type="checkbox" class="ace">
+																				<span class="lbl"> Email me a copy</span>
+																			</label>
+
+																			<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
+																				Submit
+																				<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+																			</button>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</td>
+												</tr>
+                                                }
+                                            </tbody>
+										</table>
+									</div><!-- /.span -->
+								</div>
+                           
+							</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><bold>Edit</bold></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	    <form class="login100-form validate-form p-b-33 p-t-5" asp-controller="Employee" asp-action="EditUser" method="post">
+
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="Name" name="Name"  value="">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Last Name:</label>
+           <input type="text" class="form-control" id="Lname" name="Lname" value="">
+          </div>
+
+		  <div class="form-group">
+            <label for="message-text" class="col-form-label">Role:</label>
+           <input type="text" class="form-control" id="RoleName" name="RoleName" value="" >
+          </div>
+
+		  <div class="form-group">
+            <label for="message-text" class="col-form-label">Email:</label>
+           <input type="text" class="form-control" id="Email" name="Email" value="">
+          </div>
+
+		  <div class="form-group">
+            <label for="message-text" class="col-form-label">PassWord</label>
+           <input type="text" class="form-control" id="PassWord" name="PassWord" value="">
+          </div>
+        	<input type="hidden" name="UserId" id="UserId" value="">
+      </div>
+      <div class="modal-footer">
+        <button  class="btn btn-secondary" data-dismiss="modal">Close</button>
+		
+        <button type="submit"  value="Edit" class="btn btn-primary">Save changes</button>
+      </div>
+
+	  </form>
+    </div>
+  </div>
+</div>
+<!--
+<script>
+$(document).on("click", ".edit", function () {
+    var userId = $(this).val();
+    // Get the user data via AJAX request
+    $.ajax({
+        url: "/Employee/GetUser",
+        type: "GET",
+        data: { id: userId },
+        success: function (data) {
+            // Populate the input fields with the user's data
+            $("#Name").val(data.Name);
+            $("#Lname").val(data.Lname);
+            $("#Email").val(data.Email);
+            $("#RoleName").val(data.RoleName);
+            $("#PassWord").val(data.PassWord);
+            $("#UserId").val(data.UserId);
+        },
+        error: function (xhr, status, error) {
+            // Handle any errors
+            console.log(error);
+        }
+    });
+});
+</script>-->
+
+<script>
+  const editButtons = document.querySelectorAll('.edit');
+  editButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const userId = button.value;
+	 
+      console.log("the userid is: " + userId);
+      document.querySelector('#UserId').value = userId;
+    });
+  });
+</script>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure You want to Perform this Action! 
+      </div>
+      <div class="modal-footer">
+		<form class="login100-form validate-form p-b-33 p-t-5" asp-controller="Employee" asp-action="DeleteUser" method="post">
+        <input type="hidden" name="UId" id="UId" value="">
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit"  value="Delete" class="btn btn-primary">Save changes</button>
+		 </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const DeleteButtons = document.querySelectorAll('.delete');
+  DeleteButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const userId = button.value;
+	 
+      console.log("the userid is: " + userId);
+      document.querySelector('#UId').value = userId;
+    });
+  });
+</script>
+
+
+
+<script>
+  // Get all the buttons with class "show-details-btn"
+var buttons = document.querySelectorAll("a.show-details-btn");
+
+// Loop through the buttons
+buttons.forEach(function(button) {
+  // Add a click event listener to the button
+  button.addEventListener("click", function(event) {
+    event.preventDefault(); // prevent the button from submitting the form
+    showDetails(button);
+  });
+});
+
+function showDetails(button) {
+  // Get the parent tr element of the button
+  const parentTR = button.closest('tr');
+  console.log("button's closest tr is: " + parentTR.nodeName);
+  // Get the next sibling tr element
+  const siblingTR = parentTR.nextElementSibling;
+  console.log(" parentTR nextElementSibling: " + siblingTR.nodeName);
+
+  // Check if the sibling tr element has the class name "details"
+  if (siblingTR && siblingTR.classList.contains('detail-row')) {
+	console.log(" i m in");
+    // Toggle the visibility of the sibling tr element
+    siblingTR.style.display = siblingTR.style.display === "none" ? "table-row" : "none";
+  }
+}
+
+</script>
+
+

@@ -1,0 +1,31 @@
+﻿@model Inventory_M.Models.vendor.Vendor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; padding: 20px;">
+    <h2 style="font-size: 24px;">Vendor Details</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt style="font-size: 20px; white-space: nowrap;">@Html.DisplayNameFor(model => model.VendorName)</dt>
+            <dd style="font-size: 20px;">@Html.DisplayFor(model => model.VendorName)</dd>
+            <dt style="font-size: 20px; white-space: nowrap;">@Html.DisplayNameFor(model => model.Address)</dt>
+            <dd style="font-size: 20px;">@Html.DisplayFor(model => model.Address)</dd>
+            <dt style="font-size: 20px; white-space: nowrap;">@Html.DisplayNameFor(model => model.ContactPerson)</dt>
+            <dd style="font-size: 20px;">@Html.DisplayFor(model => model.ContactPerson)</dd>
+            <dt style="font-size: 20px; white-space: nowrap;">@Html.DisplayNameFor(model => model.Telephone)</dt>
+            <dd style="font-size: 20px;">@Html.DisplayFor(model => model.Telephone)</dd>
+            <dt style="font-size: 20px; white-space: nowrap;">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd style="font-size: 20px;">@Html.DisplayFor(model => model.Email)</dd>
+            <dt style="font-size: 20px; white-space: nowrap;">@Html.DisplayNameFor(model => model.Fax)</dt>
+            <dd style="font-size: 20px;">@Html.DisplayFor(model => model.Fax)</dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.VendorId" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff;">Edit</a> |
+        <a asp-action="Index" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff;">Back to List</a>
+    </div>
+</div>

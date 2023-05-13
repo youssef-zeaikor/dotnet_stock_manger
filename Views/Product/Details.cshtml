@@ -1,0 +1,37 @@
+﻿@model Inventory_M.Models.product.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div style="font-family: Arial;">
+    <h2 style="font-size: 24px;">Details</h2>
+
+    <div style="background-color: lightgray; border: 1px solid gray; padding: 20px; text-align: center; margin: 0 auto; max-width: 500px;">
+        <h4 style="font-size: 20px; font-weight: bold;">Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.Product_Name)</dt>
+            <dd>@Html.DisplayFor(model => model.Product_Name)</dd>
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.Barcode)</dt>
+            <dd>@Html.DisplayFor(model => model.Barcode)</dd>
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.description)</dt>
+            <dd>@Html.DisplayFor(model => model.description)</dd>
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.Price)</dt>
+            <dd>@Html.DisplayFor(model => model.Price)</dd>
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.Quantity)</dt>
+            <dd>@Html.DisplayFor(model => model.Quantity)</dd>
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.Recorder)</dt>
+            <dd>@Html.DisplayFor(model => model.Recorder)</dd>
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.Brands)</dt>
+            <dd>@Html.DisplayFor(model => model.Brands.Brand_Name)</dd>
+            <dt style="font-weight: bold;">@Html.DisplayNameFor(model => model.Categories)</dt>
+            <dd>@Html.DisplayFor(model => model.Categories.Category_Name)</dd>
+        </dl>
+
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.ProductId" style="font-family: Arial; font-size: 16px; background-color: #007bff; color: #fff; border-color: #007bff; padding: 0.375rem 0.75rem; border-radius: 0.25rem; text-decoration: none; cursor: pointer;">Edit</a> |
+            <a asp-action="Index" style="font-family: Arial; font-size: 16px; background-color: #007bff; color: #fff; border-color: #007bff; padding: 0.375rem 0.75rem; border-radius: 0.25rem; text-decoration: none; cursor: pointer;">Back to List</a>
+        </div>
+    </div>
+</div>

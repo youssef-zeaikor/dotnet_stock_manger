@@ -1,0 +1,225 @@
+﻿@model IEnumerable<Inventory_M.Models.sale.Sale>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<h2>Sales History:</h2>
+
+
+<!--=====================================================-->
+
+
+<div class="clearfix">
+
+    <!--date filter-->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="startDate">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" class="form-control" id="endDate">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            
+            <div class="form-group" style="margin-top">
+            <label  class="control-label"></label>
+            <select class="form-control" asp-items="@ViewBag.Trades_list" value="" id="tradeFilter" style="margin-top: 22px;"></select>
+            <span  class="text-danger"></span>
+        </div>
+   
+
+        </div>
+
+
+
+        <div class="col-md-3">
+            <div class="dropdown">
+                <button  style="    width: 140px;
+                                            border-radius: 10px;
+                                            background-color: #6384c9 !important;
+                                            margin-top: 20px;" class="btn btn-secondary dropdown-toggle" type="button" id="filterButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filter By
+                </button>
+
+
+            </div>
+        </div>
+
+        
+        <div class="col-md-3">
+                <div class="pull-right tableTools-container" style="margin-top: -34px;">
+                    <div class="dt-buttons btn-overlap btn-group">
+                        <a class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" id="reload" aria-controls="dynamic-table" data-original-title="" title=""><span><i class="fa fa-database bigger-110 orange"></i> <span class="hidden">REELOAD DATA</span></span></a>
+                    </div>
+                </div>
+        </div>
+
+
+       
+
+        
+
+        
+    </div>
+
+</div>
+
+<!--=====================================================-->
+
+<p>
+    <a asp-action="Create">Create New</a>
+    
+        
+
+<div class="A" style=" height: 400px;  overflow-y: scroll; margin-bottom:40px">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    INVOICE#
+                </th>
+                <th>
+                    PCODE
+                </th>
+                <th>
+                    DESCRIPTION
+                </th>
+                <th>
+                    TRADE
+                </th>
+                <th>
+                    DATE SALE
+                </th>
+                <th>
+                    PRICE
+                </th>
+
+                <th>
+                    QTY
+                </th>
+                <th>
+                    DISC
+                </th>
+            
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.transno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produits.Barcode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produits.description)
+                    </td>
+                     <td>
+                        @Html.DisplayFor(modelItem => item.Trades.FullName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Qty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disc)
+                    </td>
+                
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.saleId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.saleId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.saleId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+    // Wait for the document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the filter button element
+        var filterButton = document.getElementById('filterButton');
+        
+        // Add event listener to the filter button
+        filterButton.addEventListener('click', function() {
+            // Get the start date value
+            var startDate = document.getElementById('startDate').value;
+            
+            // Get the end date value
+            var endDate = document.getElementById('endDate').value;
+
+            // Get the selected trade value
+            var tradeFilter = document.getElementById('tradeFilter').value;
+
+            console.log( 'tradeFilter' + tradeFilter);
+            
+            // Perform filtering based on start and end dates
+            filterSales(startDate, endDate, tradeFilter);
+        });
+        
+        // Function to filter sales based on start and end dates and trade
+        function filterSales(startDate, endDate, tradeFilter) {
+            // Get all the table rows
+            var tableRows = document.querySelectorAll('.table tbody tr');
+            
+            // Loop through each row
+            for (var i = 0; i < tableRows.length; i++) {
+                var row = tableRows[i];
+                
+                // Get the trade cell value
+                var tradeCell = row.cells[3];
+                var saleTrade = tradeCell.innerText;
+                
+                // Get the date cell value
+                var dateCell = row.cells[4];
+                var saleDate = dateCell.innerText;
+                
+                // Check if the sale date is within the specified range and matches the selected trade
+                if ((saleDate >= startDate && saleDate <= endDate) && (tradeFilter === '' || saleTrade === tradeFilter)) {
+                    // Show the row
+                    row.style.display = 'table-row';
+                } else {
+                    // Hide the row
+                    row.style.display = 'none';
+                }
+            }
+        }
+    });
+</script>
+
+
+<script>
+
+  var reloadButton = document.getElementById('reload');
+
+reloadButton.addEventListener('click', function() {
+    console.log('ReloadFilter clicked');
+    location.reload();
+});
+
+</script>

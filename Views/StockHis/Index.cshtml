@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Inventory_M.Models.stockin.StockIn>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>STOCK IN HISTORY</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+               REF#
+            </th>
+            <th>
+                PCODE
+            </th>
+            <th>
+               DESCRIPTION
+            </th>
+            <th>
+                QTY
+            </th>
+            <th>
+                STOCK IN DATE
+            </th>
+            <th>
+                  STOCK IN BY 
+            </th>
+         
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.products.Barcode)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.products.description)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.products.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stockeby)
+            </td>
+       
+          
+        </tr>
+}
+    </tbody>
+</table>

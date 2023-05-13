@@ -1,0 +1,180 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!-- Add the Chart.js library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card bg-primary text-white mb-3">
+        <div class="card-body" >
+          <h4 class="card-title">Sales</h4>
+                    <p class="card-text" style="text-align:center;"><strong>@ViewBag.Count</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-warning text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title">Stock Quantity</h4>
+                    <p class="card-text" style="text-align:center;"><strong>@ViewBag.MyCount</strong></p>         
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-success text-white mb-3">
+        <div class="card-body">
+          <h4 class="card-title">PRODUCTS</h4>
+                    <p class="card-text" style="text-align:center;"><strong>@ViewBag.Countpro</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+         <h4> Adjustment Statistics</h4>
+        </div>
+        <div class="card-body">
+          <canvas id="polar-area-chart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+         <h4> Vendor Statistics</h4>
+        </div>
+        <div class="card-body">
+          <canvas id="Chart2"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+        <h4>Product per Category Statistics</h4>
+        </div>
+        <div class="card-body">
+          <canvas id="Chart1"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+         <h4> Statistiques de StockIn</h4>
+        </div>
+        <div class="card-body">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ******************************* -->
+
+
+
+
+
+
+<!-- Create a script block that initializes the chart -->
+<script>
+    // Get the chart data from ViewData
+    var chartData1 = @Html.Raw(Json.Serialize(ViewData["ChartDataProductPerCategory"]));
+
+    var chartData2 = @Html.Raw(Json.Serialize(ViewData["Vendorchart"]));
+
+    var adjustmentStats = @Html.Raw(Json.Serialize(ViewData["AdjustmentStats"]));
+
+    var chartData4 = @Html.Raw(ViewData["StockInchart"]);
+
+        // Créer le graphique
+    // Get the canvas element
+    var ctx1 = document.getElementById('Chart1').getContext('2d');
+    var ctx2 = document.getElementById('Chart2').getContext('2d');
+    var ctx3 = document.getElementById('polar-area-chart').getContext('2d');
+    var ctx4 = document.getElementById('myChart').getContext('2d');
+
+
+    // Create the chart product
+    var myChart1 = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: chartData1.labels,
+            datasets: chartData1.datasets
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'right'
+            }
+        }
+    });
+
+    // Create the chart Vendor
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: chartData2,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+    // Create chart for adjustement
+    var mychart3 = new Chart(ctx3, {
+        type: 'polarArea',
+        data: {
+            labels: Object.keys(adjustmentStats),
+            datasets: [{
+                label: 'Adjustment Stats',
+                data: Object.values(adjustmentStats),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                ]
+            }]
+        }
+    });
+
+    // Create chart for Stock In
+        var myChart4 = new Chart(ctx4, {
+            type: 'bar',
+            data: chartData4,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+</script>
+
+
+
+
+

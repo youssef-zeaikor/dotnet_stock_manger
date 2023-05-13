@@ -1,0 +1,265 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Inventory_M
+build_property.RootNamespace = Inventory_M
+build_property.ProjectDir = C:\Users\Zeaikor\Downloads\FINAL\FINAL\LOL\inventoryManag_version_nassima\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Zeaikor\Downloads\FINAL\FINAL\LOL\inventoryManag_version_nassima
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Adjustement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRqdXN0ZW1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Adjustement/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRqdXN0ZW1lbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Adjustement/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRqdXN0ZW1lbnRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Adjustement/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRqdXN0ZW1lbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Adjustement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRqdXN0ZW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Adjustement/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRqdXN0ZW1lbnRcSW5kZXgxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Adjustement/Recall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRqdXN0ZW1lbnRcUmVjYWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Brand/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Brand/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Brand/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Brand/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Brand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Cancelledorder/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuY2VsbGVkb3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Category/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Critical/Reorder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JpdGljYWxcUmVvcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Employee/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUHJvZmlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Employee/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcU2hvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Inventorylist/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5bGlzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Product/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Product/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Records/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb3Jkc1xUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Sale/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Sale/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Sale/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Sale/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Sale/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Sale/TotalSales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxUb3RhbFNhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Selling/SalesStatistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGluZ1xTYWxlc1N0YXRpc3RpY3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Selling/Topsalling.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsbGluZ1xUb3BzYWxsaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Shared/_dashboardLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9kYXNoYm9hcmRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/StockHis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tIaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/StockIn/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tJblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/StockIn/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tJblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/StockIn/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tJblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/StockIn/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tJblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/StockIn/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tJblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Tradespeople/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVzcGVvcGxlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Tradespeople/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVzcGVvcGxlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Tradespeople/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVzcGVvcGxlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Tradespeople/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVzcGVvcGxlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Tradespeople/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVzcGVvcGxlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Vendor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Vendor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Vendor/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Vendor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Vendor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zeaikor/Downloads/FINAL/FINAL/LOL/inventoryManag_version_nassima/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b3a31r7cvi

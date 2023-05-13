@@ -1,0 +1,66 @@
+﻿@model Inventory_M.Models.sale.Sale
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.transno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.transno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Disc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Qty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Qty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trades)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trades.TradesId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.produits)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.produits.ProductId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.saleId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

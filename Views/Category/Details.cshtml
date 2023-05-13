@@ -1,0 +1,29 @@
+﻿@model Inventory_M.Models.Categories.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; padding: 20px;">
+    <h2 style="font-size: 24px;">Category Details</h2>
+
+    <div>
+        
+        <hr />
+        <dl class="dl-horizontal" style="font-size: 20px; text-align: center;">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category_Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Category_Name)
+            </dd>
+        </dl>
+
+    </div>
+    <div style="margin-top: 10px;">
+        <a asp-action="Edit" asp-route-id="@Model.CategoryId" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff; border-radius: 4px;">Edit</a>
+        |
+        <a asp-action="Index" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff; border-radius: 4px;">Back to List</a>
+    </div>
+</div>
+

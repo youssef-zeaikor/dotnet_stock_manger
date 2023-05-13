@@ -1,0 +1,426 @@
+﻿@page "/Index"
+@{
+    Layout = "~/Views/shared/_dashboardLayout.cshtml";
+}
+
+
+<!--filter-->
+<div class="clearfix">
+
+    <!--date filter-->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="startDate">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" class="form-control" id="endDate">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="dropdown">
+                <button style="    width: 140px;
+                                            border-radius: 10px;
+                                            background-color: #6384c9 !important;
+                                            margin-top: 20px;"
+                        class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:200px; background">
+                    Filter By
+                </button>
+                <ul class="user-menu dropdown-menu-left dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                    <li>
+                        <a href="#">
+                            SORT BY QTY
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            SORT BY TOTAL AMOUNT
+                        </a>
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="pull-right tableTools-container" style="margin-top: 24px;">
+                <div class="dt-buttons btn-overlap btn-group">
+                    <a class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title=""><span><i class="fa fa-database bigger-110 orange"></i> <span class="hidden">Export to CSV</span></span></a>
+                    <a class="dt-button buttons-print btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title=""><span><i class="fa fa-print bigger-110 grey"></i> <span class="hidden">Print</span></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="">
+    <div id="user-profile-2" class="user-profile">
+        <div class="tabbable">
+            <ul class="nav nav-tabs padding-18">
+                <li class="">
+                    <a data-toggle="tab" href="#a" aria-expanded="false">
+                        <i class="green ace-icon fa fa-user bigger-120"></i>
+                        TOP SELLING
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a data-toggle="tab" href="#b" aria-expanded="true">
+                        <i class="orange ace-icon fa fa-rss bigger-120"></i>
+                        SOLD ITEMS
+                    </a>
+                </li>
+
+                <li class="">
+                    <a data-toggle="tab" href="#c" aria-expanded="false">
+                        <i class="blue ace-icon fa fa-users bigger-120"></i>
+                        CRITICAL STOCKS
+                    </a>
+                </li>
+
+                <li class="">
+                    <a data-toggle="tab" href="#d" aria-expanded="false">
+                        <i class="pink ace-icon fa fa-picture-o bigger-120"></i>
+                        INVENTORY LIST
+                    </a>
+                </li>
+
+                <li class="">
+                    <a data-toggle="tab" href="#e" aria-expanded="false">
+                        <i class="pink ace-icon fa fa-picture-o bigger-120"></i>
+                        CANCELLED ORDER
+                    </a>
+                </li>
+
+                <li class="">
+                    <a data-toggle="tab" href="#f" aria-expanded="false">
+                        <i class="pink ace-icon fa fa-picture-o bigger-120"></i>
+                        STOCK IN HISTORY
+                    </a>
+
+                </li>
+
+                @*  <li class="nav-item">
+                <a asp-area="" asp-controller="Records" asp-action="Test">STOCK IN HISTORY</a>
+
+                </li>*@
+            </ul>
+
+            <div class="tab-content no-border padding-24">
+
+                <!--page1-->
+                <div id="a" class="tab-pane active">
+
+
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            <table class="table  table-bordered table-hover" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            PCODE
+                                        </th>
+                                        <th>
+                                            DESCRIPTION
+                                        </th>
+                                        <th>
+                                            QTY
+                                        </th>
+                                        <th>
+                                            TOTAL SALES
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+
+
+
+
+
+
+                        </div><!-- /.col -->
+
+                        <div class="col-sm-6">
+
+                            <div class="widget-box">
+                                <div class="widget-header widget-header-flat widget-header-small">
+                                    <h5 class="widget-title">
+                                        <i class="ace-icon fa fa-signal"></i>
+                                        Graphical Display
+                                    </h5>
+
+                                    <div class="widget-toolbar no-border">
+                                        <div class="inline dropdown-hover">
+                                            <button class="btn btn-minier btn-primary">
+                                                This Week
+                                                <i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
+                                                <li class="active">
+                                                    <a href="#" class="blue">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
+                                                        This Week
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+                                                        Last Week
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+                                                        This Month
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+                                                        Last Month
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <canvas id="doughnut-chart"
+                                                data-mdb-chart="doughnut"
+                                                data-mdb-dataset-label="Traffic"
+                                                data-mdb-labels="['Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' , 'Sunday ']"
+                                                data-mdb-dataset-data="[2112, 2343, 2545, 3423, 2365, 1985, 987]"
+                                                data-mdb-dataset-background-color="['rgba(63, 81, 181, 0.5)', 'rgba(77, 182, 172, 0.5)', 'rgba(66, 133, 244, 0.5)', 'rgba(156, 39, 176, 0.5)', 'rgba(233, 30, 99, 0.5)', 'rgba(66, 73, 244, 0.4)', 'rgba(66, 133, 244, 0.2)']">
+                                        </canvas>
+
+
+
+                                    </div><!-- /.widget-main -->
+                                </div><!-- /.widget-body -->
+                            </div>
+
+
+
+
+
+
+                        </div><!-- /.col -->
+                    </div>
+
+
+
+                </div><!-- /#end page1 -->
+
+
+
+
+                <div id="b" class="tab-pane ">
+                    <table class="table  table-bordered table-hover" id="table2">
+                        <thead>
+                            <tr>
+                                <th>
+                                    PCODE
+                                </th>
+                                <th>
+                                    DESCRIPTION
+                                </th>
+                                <th>
+                                    PRICE
+                                </th>
+                                <th>
+                                    QTY
+                                </th>
+                                <th>
+                                    DISCOUNT
+                                </th>
+                                <th>
+                                    TOTAL
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                </div><!-- /#page2 -->
+
+                <div id="c" class="tab-pane">
+                    <table class="table  table-bordered table-hover" id="table3">
+                        <thead>
+                            <tr>
+                                <th>
+                                    PCODE
+                                </th>
+                                <th>
+                                    BARCODE
+                                </th>
+                                <th>
+                                    DESCRIPTION
+                                </th>
+                                <th>
+                                    BRAND
+                                </th>
+                                <th>
+                                    CATEGORY
+                                </th>
+                                <th>
+                                    PRICE
+                                </th>
+                                <th>
+                                    RE-ORDER
+                                </th>
+                                <th>
+                                    STOCK ON HAND
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div><!-- /#page3 -->
+
+                <div id="d" class="tab-pane">
+                    <table class="table  table-bordered table-hover" id="table4">
+                        <thead>
+                            <tr>
+                                <th>
+                                    PCODE
+                                </th>
+                                <th>
+                                    BARCODE
+                                </th>
+                                <th>
+                                    DESCRIPTION
+                                </th>
+                                <th>
+                                    BRAND
+                                </th>
+                                <th>
+                                    CATEGORY
+                                </th>
+                                <th>
+                                    PRICE
+                                </th>
+                                <th>
+                                    RE-ORDER
+                                </th>
+                                <th>
+                                    STOCK ON HAND
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div><!-- /#page4 -->
+
+                <div id="e" class="tab-pane">
+                    <table class="table  table-bordered table-hover" id="table5">
+                        <thead>
+                            <tr>
+                                <th>
+                                    TRANS. NO
+                                </th>
+                                <th>
+                                    PCODE
+                                </th>
+                                <th>
+                                    DESCRIPTION
+                                </th>
+                                <th>
+                                    PRICE
+                                </th>
+                                <th>
+                                    QTY
+                                </th>
+                                <th>
+                                    TOTAL
+                                </th>
+                                <th>
+                                    DATE
+                                </th>
+                                <th>
+                                    VOID BY
+                                </th>
+                                <th>
+                                    CANCELLED BY
+                                </th>
+                                <th>
+                                    REASON
+                                </th>
+                                <th>
+                                    ACTION
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                </div><!-- /#page5 -->
+
+                <div id="f" class="tab-pane">
+                    <table class="table  table-bordered table-hover" id="table6">
+                        <thead>
+                            <tr>
+                                <th>
+                                    REF
+                                </th>
+                                <th>
+                                    PCODE
+                                </th>
+                                <th>
+                                    DESCRIPTION
+                                </th>
+                                <th>
+                                    QTY
+                                </th>
+                                <th>
+                                    STOCK IN DATE
+                                </th>
+                                <th>
+                                    STOCK IN BY
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div><!-- /#page6 -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

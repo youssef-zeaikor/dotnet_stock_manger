@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h1>Statistiques de vente</h1>
+<div style="width:600px;height:600px;">
+    <canvas id="chart" width="800" height="400"></canvas>
+</div>
+@section scripts {
+    <script>
+        var chartData = @Html.Raw(Json.Serialize(ViewBag.Chart));
+
+        var ctx = document.getElementById("chart").getContext("2d");
+        var chart = new Chart(ctx, chartData);
+    </script>
+}@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Inventory_M.Models.stockin.StockIn>
+
+    <h2> CRITICAL STOCKS </h2>
+
+
+
+    
+<table class="table">
+    <thead>
+        <tr>
+            <th>PCODE</th>
+            <th> PRODUCT_NAME</th>
+            <th>DESCRIPTION </th>           
+            <th>PRICE</th>           
+            <th>RE-ORDER </th>
+            <th>STOCK ON HAND</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stockIn in Model)
+        {
+            <tr>
+                <td>@stockIn.products.Barcode</td>
+                <td>@stockIn.products.Product_Name</td>
+                <td>@stockIn.products.description</td>                
+                <td>@stockIn.products.Price</td>
+                <td>@stockIn.products.Recorder</td>
+                <td>@stockIn.qtynew</td>
+            </tr>
+        }
+    </tbody>
+</table>

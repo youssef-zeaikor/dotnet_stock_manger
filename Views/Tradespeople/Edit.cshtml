@@ -1,0 +1,73 @@
+﻿@model Inventory_M.Models.tradespeople.Tradespeople
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-center">Edit</h2>
+
+<h4>Tradespeople</h4>
+<hr />
+<div class="row justify-content-center center text: center ">
+    <div class="mx-auto col-10 col-md-8 col-lg-6  center  ">
+        <form asp-action="Edit" class="custom-form ">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TradesId" />
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tele" class="control-label"></label>
+                <input asp-for="Tele" class="form-control" />
+                <span asp-validation-for="Tele" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ADRESS" class="control-label"></label>
+                <input asp-for="ADRESS" class="form-control" />
+                <span asp-validation-for="ADRESS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="matricule" class="control-label"></label>
+                <input asp-for="matricule" class="form-control" />
+                <span asp-validation-for="matricule" class="text-danger"></span>
+            </div>
+            <div style="display: flex;">
+                <div class="form-group" style="width: 150px; height: 40px; margin-right: 10px;">
+                    <input type="submit" value="Save" class="btn btn-default btn-primary" style="font-family: Arial; padding: 5px 10px; font-size: 16px; width: 100%; height: 100%; box-sizing: border-box;" />
+                </div>
+                <div style="width: 150px; height: 40px;">
+                    <a asp-action="Index" style="font-family: Arial; font-size: 16px; padding: 5px 10px; text-decoration: none; background-color: #007bff; color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .custom-form {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .center {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+    }
+</style>

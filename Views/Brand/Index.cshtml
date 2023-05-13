@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Inventory_M.Models.Brands.Brand>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>BRAND LIST</h2>
+
+
+
+<table style="width:100%;">
+
+    <tr>
+        <td style="width:80%;">
+            <form asp-action="Index" method="post">
+                <div class="form-group">
+
+                    <label for="SearchString">Search by partial title:</label>
+                    <input type="search" name="SearchString" value="@ViewData["CurrentFilter"]" />
+
+                    <input type="submit" value="Search" class="btn btn-primary" />
+
+                </div>
+            </form>
+        </td>
+        <td style="text-align:center;">
+            <a class="btn btn-success" data-toggle="modal" asp-action="Create">
+                Create Now
+            </a>
+
+        </td>
+    </tr>
+</table>
+
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success">
+        <strong> Success !</strong>@TempData["AlertMessage"]
+
+    </div>
+}
+<table class="table  table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="width:80%;">
+                @Html.DisplayNameFor(model => model.Brand_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand_Name)
+            </td>
+                <td style="text-align:center;">
+                    <a asp-action="Edit" asp-route-id="@item.BrandId">
+                        <span>
+                            <i class="ace-icon fa fa-pencil bigger-120 btn btn-xs btn-info edit"></i>
+                        </span>
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.BrandId">
+                        <span>
+                            <i class="fa fa-info-circle  bigger-120 " aria-hidden="true"></i>
+                        </span>
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.BrandId">
+                        <span>
+                            <i class="ace-icon fa fa-trash-o bigger-120   btn btn-xs btn-danger delete"></i>
+                        </span>
+                    </a>
+
+                 
+                    
+      
+
+     
+
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

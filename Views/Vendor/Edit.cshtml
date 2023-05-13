@@ -1,0 +1,62 @@
+﻿@model Inventory_M.Models.vendor.Vendor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Vendor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="VendorId" />
+            <div class="form-group">
+                <label asp-for="VendorName" class="control-label"></label>
+                <input asp-for="VendorName" class="form-control" />
+                <span asp-validation-for="VendorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactPerson" class="control-label"></label>
+                <input asp-for="ContactPerson" class="form-control" />
+                <span asp-validation-for="ContactPerson" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telephone" class="control-label"></label>
+                <input asp-for="Telephone" class="form-control" />
+                <span asp-validation-for="Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fax" class="control-label"></label>
+                <input asp-for="Fax" class="form-control" />
+                <span asp-validation-for="Fax" class="text-danger"></span>
+            </div>
+            <div style="display: flex;">
+                <div class="form-group" style="width: 150px; height: 40px; margin-right: 10px;">
+                    <input type="submit" value="Save" class="btn btn-default btn-primary" style="font-family: Arial; padding: 5px 10px; font-size: 16px; width: 100%; height: 100%; box-sizing: border-box;" />
+                </div>
+                <div style="width: 150px; height: 40px;">
+                    <a asp-action="Index" style="font-family: Arial; font-size: 16px; padding: 5px 10px; text-decoration: none; background-color: #007bff; color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

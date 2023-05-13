@@ -1,0 +1,56 @@
+﻿@model Inventory_M.Models.stockin.StockIn
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2> StockIn Details</h2>
+
+
+<div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; padding: 20px;">
+    <h2 style="font-size: 24px;">Details</h2>
+
+    <div>
+     
+        <hr />
+        <table style="display: table;">
+            <tr style="display: table-row;">
+                <td style="display: table-cell; font-weight: bold; padding-right: 10px;">@Html.DisplayNameFor(model => model.Reference)</td>
+                <td style="display: table-cell;">@Html.DisplayFor(model => model.Reference)</td>
+            </tr>
+            <hr style="display: table-row;">
+            <tr style="display: table-row;">
+                <td style="display: table-cell; font-weight: bold; padding-right: 10px;">@Html.DisplayNameFor(model => model.Quantite)</td>
+                <td style="display: table-cell;">@Html.DisplayFor(model => model.Quantite)</td>
+            </tr>
+            <hr style="display: table-row;">
+            <tr style="display: table-row;">
+                <td style="display: table-cell; font-weight: bold; padding-right: 10px;">@Html.DisplayNameFor(model => model.Date)</td>
+                <td style="display: table-cell;">@Html.DisplayFor(model => model.Date)</td>
+            </tr>
+            <hr style="display: table-row;">
+            <tr style="display: table-row;">
+                <td style="display: table-cell; font-weight: bold; padding-right: 10px;">@Html.DisplayNameFor(model => model.stockeby)</td>
+                <td style="display: table-cell;">@Html.DisplayFor(model => model.stockeby)</td>
+            </tr>
+            <hr style="display: table-row;">
+            <tr style="display: table-row;">
+                <td style="display: table-cell; font-weight: bold; padding-right: 10px;">@Html.DisplayNameFor(model => model.venders)</td>
+                <td style="display: table-cell;">@Html.DisplayFor(model => model.venders.VendorId)</td>
+            </tr>
+            <hr style="display: table-row;">
+            <tr style="display: table-row;">
+                <td style="display: table-cell; font-weight: bold; padding-right: 10px;">@Html.DisplayNameFor(model => model.products)</td>
+                <td style="display: table-cell;">@Html.DisplayFor(model => model.products.ProductId)</td>
+            </tr>
+            <hr style="display: table-row;">
+        </table>
+    </div>
+    
+    <br/>
+    <br />
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.StockInId" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff;">Edit</a> |
+        <a asp-action="Index" style="font-size: 16px; text-decoration: none; background-color: #007bff; padding: 5px 10px; color: #fff;">Back to Stock In History List</a>
+    </div>
+

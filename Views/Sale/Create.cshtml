@@ -1,0 +1,60 @@
+﻿@model Inventory_M.Models.sale.Sale
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2> Sale History </h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="transno" class="control-label"></label>
+                <input asp-for="transno" class="form-control" />
+                <span asp-validation-for="transno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disc" class="control-label"></label>
+                <input asp-for="Disc" class="form-control" />
+                <span asp-validation-for="Disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>           
+            <div class="form-group">
+                <label asp-for="TradesId" class="control-label"> Trades</label>
+                <select asp-for="TradesId" class ="form-control" asp-items="ViewBag.TradesId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductId" class="control-label"> ProductName</label>
+                <select asp-for="ProductId" class ="form-control" asp-items="ViewBag.ProductId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

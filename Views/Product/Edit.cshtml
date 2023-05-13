@@ -1,0 +1,71 @@
+﻿@model Inventory_M.Models.product.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 style="font-family: Arial;">Edit Product</h2>
+<hr />
+
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductId" />
+            <div class="form-group text-center">
+                <label asp-for="Product_Name" class="control-label" style="font-family: Arial;"></label>
+                <input asp-for="Product_Name" class="form-control" style="font-family: Arial; text-align:center;" />
+                <span asp-validation-for="Product_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="Barcode" class="control-label" style="font-family: Arial;"></label>
+                <input asp-for="Barcode" class="form-control" style="font-family: Arial; text-align:center;" />
+                <span asp-validation-for="Barcode" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="description" class="control-label" style="font-family: Arial;"></label>
+                <input asp-for="description" class="form-control" style="font-family: Arial; text-align:center;" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="Price" class="control-label" style="font-family: Arial;"></label>
+                <input asp-for="Price" class="form-control" style="font-family: Arial; text-align:center;" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="Quantity" class="control-label" style="font-family: Arial;"></label>
+                <input asp-for="Quantity" class="form-control" style="font-family: Arial; text-align:center;" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="Recorder" class="control-label" style="font-family: Arial;"></label>
+                <input asp-for="Recorder" class="form-control" style="font-family: Arial; text-align:center;" />
+                <span asp-validation-for="Recorder" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="BrandId" class="control-label" style="font-family: Arial;"></label>
+                <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId" style="font-family: Arial;"></select>
+                <span asp-validation-for="BrandId" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <label asp-for="CategoryId" class="control-label" style="font-family: Arial;"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId" style="font-family: Arial;"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div style="display: flex;">
+                <div class="form-group" style="width: 150px; height: 40px; margin-right: 10px;">
+                    <input type="submit" value="Save" class="btn btn-default btn-primary" style="font-family: Arial; padding: 5px 10px; font-size: 16px; width: 100%; height: 100%; box-sizing: border-box;" />
+                </div>
+                <div style="width: 150px; height: 40px;">
+                    <a asp-action="Index" style="font-family: Arial; font-size: 16px; padding: 5px 10px; text-decoration: none; background-color: #007bff; color: #fff; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

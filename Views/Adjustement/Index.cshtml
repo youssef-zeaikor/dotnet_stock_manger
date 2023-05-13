@@ -1,0 +1,209 @@
+﻿@model IEnumerable<Inventory_M.Models.product.Product>
+
+@{
+    ViewData["Title"] = "Index";
+
+    Random rand = new Random();
+    int randomNum = rand.Next(100000, 999999);
+
+}
+
+<h2>PRODUCT LIST</h2>
+
+<table style="width:100%;">
+
+    <tr>
+        <td style="width:80%;">
+            <form asp-action="Index" method="post">
+                <div class="form-group">
+
+                    <label for="SearchString">Search by partial title:</label>
+                    <input type="search" name="SearchString" value="@ViewData["CurrentFilter"]" />
+
+                    <input type="submit" value="Search" class="btn btn-primary" />
+
+                </div>
+            </form>
+        </td>
+        <td style="text-align:center;">
+            <a class="btn btn-success" data-toggle="modal" asp-action="Create">
+                Create Now
+            </a>
+
+        </td>
+    </tr>
+</table>
+
+
+<div class="A" style=" height: 400px;  overflow-y: scroll; margin-bottom:40px">
+
+
+    @if (TempData["AlertMessage"] != null)
+    {
+        <div class="alert alert-success">
+            <strong> Success !</strong>@TempData["AlertMessage"]
+
+        </div>
+    }
+    <table class="table  table-bordered table-hover" style="">
+        <thead style="position: sticky;
+                    top: 0;
+                    background-color: white;">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Product_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Barcode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Recorder)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Brands)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categories)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody style="">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Barcode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recorder)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brands.Brand_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categories.Category_Name)
+                    </td>
+                    <td>
+                        <button class="adjustB" value="@Html.DisplayFor(modelItem => item.ProductId)">
+                            <a>ADJUST</a>
+                        </button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
+
+<div style="border:2px solid; padding-top:10px; padding-bottom:30px">
+
+    <div style="width: 100%; padding:10px; margin-bottom:10px"> <h3> ADJUST PRODUCT</h3></div>
+    <form asp-action="Create" asp-controller="Adjustement" style="width: 100%;">
+        <input type="hidden" name="productId" id="idProduct" value="">
+
+        <div style="display: flex; width: 100%;">
+            <div style="flex: 1;">
+                <div style="margin: 20px;">
+                    <label for="Reference">Reference</label>
+                    <input class="form-control" id="Reference" type="text" name="Reference" value="@randomNum">
+                </div>
+
+                <div style="margin: 20px;">
+                    <label for="Pcode">Barcode</label>
+                    <input class="form-control" id="Pcode" type="text" name="Pcode">
+                </div>
+
+                <div style="margin: 20px;">
+                    <label for="description">Description</label>
+                    <input class="form-control" id="description" type="text" name="description">
+                </div>
+
+                <div style="margin: 20px;">
+                    <label for="quantity">Qty</label>
+                    <input class="form-control" id="quantity" type="text" name="quantity">
+                </div>
+            </div>
+
+            <div style="flex: 1; ">
+                <div style="margin: 20px;" class="form-check">
+                    <label class="form-check-label" for="action">Command</label>
+                    <select id="action" style="width: 700px;padding: 10px;height: 37px;" name="action">
+                        <option value="add">Add To Stock</option>
+                        <option value="remove">Remove From Stock</option>
+                    </select>
+                </div>
+
+                <div style="margin: 20px;">
+                    <label for="Remarks">Remarks</label>
+                    <textarea placeholder="Enter your Remarks here" rows="5" class="form-control" id="Remarks" name="Remarks"></textarea>
+                </div>
+
+                <div style="margin: 20px;">
+                    <label for="user">User</label>
+                    <input class="form-control" id="user" type="text" value="@ViewBag.UserName" name="user">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" style="float:right;">Submit</button>
+    </form>
+
+</div>
+
+
+
+<!--======================js============================-->
+
+
+<script>
+    const AdjButtons = document.querySelectorAll('.adjustB');
+    AdjButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log("the productId is: ");
+            const productId = button.value;
+            const row = button.parentNode.parentNode; // Get the row containing the clicked button
+            const secondTd = row.cells[1].innerText; // Get the value of the second td in the same row
+            const thirdTd = row.cells[2].innerText; // Get the value of the third td in the same row
+
+            console.log("the productId is: " + productId);
+            console.log("the second td value is: " + secondTd);
+            console.log("the third td value is: " + thirdTd);
+
+
+            console.log("the userid is: " + productId);
+            document.querySelector('#idProduct').value = productId;
+
+            document.querySelector('#Pcode').value = secondTd;
+            document.querySelector('#description').value = thirdTd;
+
+            console.log("the productcode is: " + document.querySelector('#Pcode').value);
+            console.log("the productdesc is: " + document.querySelector('#description').value);
+
+        });
+    });
+</script>
+

@@ -1,0 +1,44 @@
+﻿@model Inventory_M.Models.tradespeople.Tradespeople
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                <td>@Html.DisplayFor(model => model.FullName)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Tele)</th>
+                <td>@Html.DisplayFor(model => model.Tele)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ADRESS)</th>
+                <td>@Html.DisplayFor(model => model.ADRESS)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.matricule)</th>
+                <td>@Html.DisplayFor(model => model.matricule)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="TradesId" />
+    <div class="form-group text-center">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>

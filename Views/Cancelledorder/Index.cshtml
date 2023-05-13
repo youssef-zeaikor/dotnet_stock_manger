@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Inventory_M.Models.adjustement.Adjustement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>CANCELLED ORDER </h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                TRANS.NO
+            </th>
+            <th>
+                PCODE
+            </th>
+            <th>
+               DESCRIPTION
+            </th>
+            <th>
+               PRICE
+            </th>
+            <th>
+             QTY
+            </th>
+            <th>
+              DATE
+            </th>
+            <th>
+                CANCELLED BY 
+            </th>
+            <th>
+               REASON
+            </th>
+            <th>
+               ACTION
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.Price)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserAuth)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Action)
+            </td>
+        
+        </tr>
+}
+    </tbody>
+</table>

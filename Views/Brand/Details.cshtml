@@ -1,0 +1,27 @@
+﻿@model Inventory_M.Models.Brands.Brand
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; padding: 20px;">
+    <h2 style="font-size: 24px;">Details</h2>
+
+    <div>
+        <h4 style="margin-bottom: 10px;">Brand</h4>
+        <hr style="margin-bottom: 20px;" />
+        <dl class="dl-horizontal" style="margin-bottom: 20px;">
+            <dt>
+                <strong style="font-weight: bold;">@Html.DisplayNameFor(model => model.Brand_Name)</strong>
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Brand_Name)
+            </dd>
+        </dl>
+    </div>
+
+    <div style="display: flex; justify-content: space-between;">
+        <a asp-action="Edit" asp-route-id="@Model.BrandId" style="text-decoration: none; background-color: #007bff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">Edit</a>
+        <a asp-action="Index" style="text-decoration: none; background-color: #007bff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">Back to List</a>
+    </div>
+</div>

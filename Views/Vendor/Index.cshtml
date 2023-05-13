@@ -1,0 +1,186 @@
+﻿@model IEnumerable<Inventory_M.Models.vendor.Vendor>
+
+@{
+    ViewData["Title"] = "Index";
+   // ViewData["VendorName"] = "Index";
+}
+
+<h2>VENDOR LIST</h2>
+
+<table style="width:100%;">
+
+    <tr>
+        <td style="width:80%;">
+            <form asp-action="Index" method="post">
+                <div class="form-group">
+
+                    <label for="SearchString">Search by partial title:</label>
+                    <input type="search" name="SearchString" value="@ViewData["CurrentFilter"]" />
+
+                    <input type="submit" value="Search" class="btn btn-primary" />
+
+                </div>
+            </form>
+        </td>
+        <td style="text-align:center;">
+            <a class="btn btn-success" data-toggle="modal" asp-action="Create">
+                Create Now
+            </a>
+
+        </td>
+    </tr>
+</table>
+
+
+
+
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success">
+        <strong> Success !</strong>@TempData["AlertMessage"]
+
+    </div>
+}
+
+<div class="page-content">
+					
+                        
+    <div class="row">
+        <div class="col-xs-12">
+
+            <table class="table  table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.VendorName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ContactPerson)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Telephone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fax)
+                        </th>
+                        <th class="detail-col">Details</th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VendorName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContactPerson)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telephone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fax)
+                        </td>
+                            <td class="center">
+                                <div class="action-buttons">
+                                    <a class="green bigger-140 show-details-btn" title="Show Details" asp-action="Details" asp-route-id="@item.VendorId">
+                                        <i class="ace-icon fa fa-angle-double-down"></i>
+                                        <span class="sr-only ">Details</span>
+                                    </a>
+                                </div>
+                            </td>
+                       
+
+                            <td style="text-align:center;">
+                                <a asp-action="Edit" asp-route-id="@item.VendorId">
+                                    <span>
+                                        <i class="ace-icon fa fa-pencil bigger-120 btn btn-xs btn-info edit"></i>
+                                    </span>
+                                </a>|
+
+                                <a asp-action="Delete" asp-route-id="@item.VendorId">
+                                    <span>
+                                        <i class="ace-icon fa fa-trash-o bigger-120   btn btn-xs btn-danger delete"></i>
+                                    </span>
+                                </a> 
+
+                                
+                            </td>
+                    </tr>
+
+                        <tr class="detail-row">
+                            <td colspan="8">
+                                <div class="table-detail">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-2">
+                                            <div class="text-center">
+                                                <br>
+                                                <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                                                    <div class="inline position-relative">
+                                                        <a class="user-title-label" href="#">
+                                                            <i class="ace-icon fa fa-circle light-green"></i>
+                                                            &nbsp;
+                                                            <span class="white">@item.VendorName :: </span>
+
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-7">
+                                            <div class="space visible-xs"></div>
+
+                                            <div class="profile-user-info profile-user-info-striped">
+
+
+                                                <div class="profile-info-row">
+                                                    <div class="profile-info-name"> Email </div>
+
+                                                    <div class="profile-info-value">
+                                                        <span>@item.Email</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="profile-info-row">
+                                                    <div class="profile-info-name"> PassWord </div>
+
+                                                    <div class="profile-info-value">
+                                                        <span>@item.Address</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                          
+                                    </div>
+                                </div>
+                            </td>
+          
+                        </tr>
+
+                } 
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+ </div>
+
+
